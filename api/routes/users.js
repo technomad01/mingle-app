@@ -9,5 +9,3 @@ router.get("/find/:userId", getUser)
 
   
 export default router
-
- 

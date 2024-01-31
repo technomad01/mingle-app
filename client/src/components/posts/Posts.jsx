@@ -3,7 +3,7 @@ import "./posts.scss";
 import { useQuery } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
 
-const Posts = ({userId}) => {
+const Posts = () => {
   const { isLoading, error, data } = useQuery(["posts"], () =>
     makeRequest.get("/posts").then((res) => {
       return res.data;
@@ -11,9 +11,9 @@ const Posts = ({userId}) => {
   );
 
   console.log(data);
-
+  
   return (
-     <div className="posts">
+    <div className="posts">
       {error
         ? "Something went wrong!"
         : isLoading
