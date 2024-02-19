@@ -1,5 +1,5 @@
 import { db } from "../connect.js";
-import jwt  from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import moment from "moment";
 
 export const getComments = (req, res) => {
@@ -25,7 +25,7 @@ export const addComment = (req, res) => {
       req.body.desc,
       moment(Date.now()).format("YYYY-MM-DD HH:mm:ss"),
       userInfo.id,
-      req.body.postId
+      req.body.postId,
     ];
 
     db.query(q, [values], (err, data) => {
